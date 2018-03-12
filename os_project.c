@@ -29,3 +29,20 @@ main()
         printf("\n Burst time for P%d   : ",i+1);
         scanf("%d",&pro[i].bursttime);
     }
+    system("cls");
+	int v=n-1;
+	sorting1(pro,n);
+	int array1[n],array2[n];
+	int array3[n];
+	int r;
+
+	printf("\n\nProcessId\tArrival time\tBurst time\t\n");
+	for(i=0;i<n;i++)
+	{
+		printf("\n%d\t\t%d\t\t%d\n",pro[i].processid,pro[i].arrivaltime,pro[i].bursttime);//tat and wt
+		array1[i]=pro[i].processid;
+	}
+	for(i=0;i<n-1;i++)
+	{
+		array2[i]=array1[i+1];
+	}
