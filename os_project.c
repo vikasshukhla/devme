@@ -157,3 +157,26 @@ main()
 			m=m-1;
 	}
 	while(m>0);
+
+
+
+
+
+
+
+
+}
+  void sorting(double array[],int array1[] ,int n)
+  {
+  	int i, j;
+  	int min_idx;
+  	for (i = 0; i < n-1; i++)
+  	{
+  		min_idx = i;
+  		for (j = i+1; j < n; j++)
+  		if (array[j] < array[min_idx])
+  		min_idx = j;
+  		swapping(&array[min_idx], &array[i]);
+  		swapping1(&array1[min_idx], &array1[i]);
+  	}
+  }
