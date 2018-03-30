@@ -157,14 +157,52 @@ main()
 			m=m-1;
 	}
 	while(m>0);
+  float sum1=0,sum2=0;
+		for (i=0;i<n;i++)
+		{
+			turnaroundtime[i]=completiontime[i+1]-pro[i].arrivaltime;
+        }
 
+	    for (i=0;i<n;i++)
+		{
+			waitingtime[i]=turnaroundtime[i]-pro[i].bursttime;
+        }
 
+	 for(i=0;i<n;i++)
+	 {
+	 sum1=sum1+turnaroundtime[i];
+	 sum2=sum2+waitingtime[i];
+	 }
 
+	 printf("\n\n\nProcessId\tArrival time\tBurst time\tTurnAround Time\t\tWating Time");
+	for(i=0;i<n;i++)
+	{
+		printf("\n%d\t\t%d\t\t%d\t\t%d\t\t\t%d\n",pro[i].processid,pro[i].arrivaltime,pro[i].bursttime,turnaroundtime[i],waitingtime[i]);
+    }
 
+	float avgwaiting,avgturnaround;
+	avgturnaround=sum1/n;
+	avgwaiting=sum2/n;
+	printf("\n\n");
+	printf("Average TurnAround Time = %f",avgturnaround);
+	printf("\t\t\tAverage Waiting Time = %f",avgwaiting);
+	printf("\n\n\n");
 
+}
 
+void swapping1(double *mn,double *op)
+{
+	double temp = *mn;
+	*mn = *op;
+	*op = temp;
+}
 
-
+void swapping(int *mn, int *op)
+{
+	int temp = *mn;
+	*mn = *op;
+	*mn = temp;
+}
 }
   void sorting(double array[],int array1[] ,int n)
   {
