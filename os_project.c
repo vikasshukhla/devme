@@ -8,6 +8,11 @@ struct sjfprocess
     int processid,arrivaltime,bursttime;
 };
 
+void swapping1(double *mn,double *op);
+void swapping(int *mn, int *op);
+void sorting(double array[],int array1[] ,int n);
+
+
 void sorting1(struct sjfprocess *t,int p)
 {
 	int i,j;
